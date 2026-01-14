@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Pengajuan Surat</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/detail_surat.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <!-- HEADER LOGO DESA -->
+      <div class="sidebar-header">
+        <img src="assets/img/logo.png" alt="Logo Desa Pesudukuh" class="logo-desa" />
+        <div class="header-text">
+          <span class="desa-title">Pemerintah Desa</span>
+          <strong class="desa-name">Pesudukuh</strong>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-section">MENU UTAMA</li>
+        <li>
+          <a href="dashboard.html" class="menu-item">
+            <i class="bi bi-speedometer2"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="menu-section">LAYANAN DESA</li>
+        <li>
+          <a href="pengajuan surat.html" class="menu-item active">
+            <i class="bi bi-envelope-paper"></i>
+            <span>Pengajuan Surat</span>
+          </a>
+        </li>
+        <li>
+          <a href="pembuatan surat.html" class="menu-item">
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Pembuatan Surat</span>
+          </a>
+        </li>
+
+        <li class="menu-section">INFORMASI PUBLIK</li>
+
+        <li>
+          <a href="kabar.html" class="menu-item">
+            <i class="bi bi-newspaper"></i>
+            <span>Kabar Desa</span>
+          </a>
+        </li>
+
+        <li class="menu-section">MANAJEMEN</li>
+        <li>
+          <a href="laporan.html" class="menu-item">
+            <i class="bi bi-bar-chart"></i>
+            <span>Laporan</span>
+          </a>
+        </li>
+        <li>
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span>Profil Akun</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- LOGOUT BUTTON -->
+      <div class="sidebar-logout">
+        <a href="index.html" class="logout-btn">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Keluar</span>
+        </a>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+    </aside>
+    <main class="main">
+      <div class="detail-grid">
+        <!-- LEFT CONTENT -->
+        <section class="detail-card">
+          <!-- HEADER -->
+          <div class="detail-header">
+            <h2>
+              <i class="bi bi-file-earmark-text"></i>
+              Detail Pengajuan Surat
+            </h2>
+            <button class="btn-back" onclick="history.back()"><i class="bi bi-arrow-left"></i> Kembali</button>
+          </div>
+
+          <!-- INFO GRID -->
+          <div class="info-grid">
+            <div class="info-box">
+              <i class="bi bi-file-earmark-text"></i>
+              <div class="info-content">
+                <span>Jenis Surat</span>
+                <strong>TEST</strong>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-person"></i>
+              <div class="info-content">
+                <span>Nama Pemohon</span>
+                <strong>Prayoga Kusdiana Ikhsani</strong>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-credit-card"></i>
+              <div class="info-content">
+                <span>NIK</span>
+                <strong>3524232309040001</strong>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-check-circle"></i>
+              <div class="info-content">
+                <span class="info-label">Status</span>
+                <span class="status-badge success">Selesai</span>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <i class="bi bi-calendar-event"></i>
+              <div class="info-content">
+                <span>Tanggal Pengajuan</span>
+                <strong>Kamis, 27 November 2025</strong>
+              </div>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="info-box highlight">
+              <i class="bi bi-telephone"></i>
+              <div class="info-content">
+                <span>Nomor Telepon</span>
+                <strong>081357743268</strong>
+
+                <div class="contact-action">
+                  <button class="btn-call"><i class="bi bi-telephone"></i> Telepon</button>
+                  <button class="btn-wa"><i class="bi bi-whatsapp"></i> WhatsApp</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- META INFO -->
+          <div class="meta-info">
+            <p><strong>Nomor Surat:</strong> 6</p>
+            <p><strong>Diproses Oleh:</strong> Perangkat User</p>
+            <p><strong>Terakhir Update:</strong> 18/12/2025 13:34</p>
+          </div>
+
+          <!-- DOKUMEN -->
+          <div class="section-box">
+            <h4><i class="bi bi-folder2-open"></i> Dokumen Terkait</h4>
+
+            <div class="alert-info">
+              <i class="bi bi-info-circle"></i>
+              Tidak ada dokumen yang dilampirkan
+            </div>
+          </div>
+
+          <!-- TEMPLATE SURAT (TIDAK DIPOTONG) -->
+          <div class="section-box">
+            <h4><i class="bi bi-file-earmark-ruled"></i> Template Surat</h4>
+
+            <div class="form-group">
+              <label>Pendahuluan</label>
+              <input type="text" value="Sepengetahuan Kepala Desa:" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Kepala Desa</label>
+                <input type="text" value="Prayoga Kusdiana Ikhsani" />
+              </div>
+              <div class="form-group">
+                <label>NIP</label>
+                <input type="text" value="197512151998031002" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Masyarakat</label>
+              <input type="text" value="Dibawah ini Masyarakat dengan:" />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Nama</label>
+                <input type="text" value="Prayoga Kusdiana Ikhsani" />
+              </div>
+              <div class="form-group">
+                <label>Jenis Kelamin</label>
+                <input type="text" value="Laki-laki" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label>Tempat, Tanggal Lahir</label>
+                <input type="text" value="Nganjuk, 10-11-2025" />
+              </div>
+              <div class="form-group">
+                <label>Alamat</label>
+                <input type="text" value="asdadsdasda" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>Penutup</label>
+              <input type="text" value="Adalah Masyarakat Pesudukuh" />
+            </div>
+
+            <button class="btn-save"><i class="bi bi-check2-circle"></i> Simpan Perubahan</button>
+          </div>
+        </section>
+
+        <!-- ================= RIGHT SIDEBAR ================= -->
+        <aside class="detail-side">
+          <div class="side-card">
+            <h4>Aksi Cepat</h4>
+            <button class="btn-download"><i class="bi bi-download"></i> Download Surat</button>
+            <button class="btn-print"><i class="bi bi-printer"></i> Cetak Surat</button>
+          </div>
+
+          <div class="side-card">
+            <h4>Log Aktivitas</h4>
+            <div class="timeline">
+              <div class="timeline-item">
+                <span class="dot blue"></span>
+                <strong>Pengajuan Dibuat</strong>
+                <small>27 November 2025 07:43</small>
+              </div>
+              <div class="timeline-item">
+                <span class="dot green"></span>
+                <strong>Status Diubah</strong>
+                <small>18 Desember 2025 13:34</small>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>
+  </body>
+
+  <script>
+    function goBack() {
+      if (document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = "index.html"; // fallback
+      }
+    }
+  </script>
+  <!-- SIDEBAR TOGGLE -->
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const toggleBtn = document.getElementById("sidebarToggle");
+    const toggleIcon = toggleBtn.querySelector("i");
+
+    toggleBtn.addEventListener("click", () => {
+      sidebar.classList.toggle("collapsed");
+
+      if (sidebar.classList.contains("collapsed")) {
+        toggleIcon.classList.remove("bi-chevron-left");
+        toggleIcon.classList.add("bi-chevron-right");
+      } else {
+        toggleIcon.classList.remove("bi-chevron-right");
+        toggleIcon.classList.add("bi-chevron-left");
+      }
+    });
+  </script>
+</html>

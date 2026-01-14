@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Kabar</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/edit kabar.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <!-- HEADER LOGO DESA -->
+      <div class="sidebar-header">
+        <img src="assets/img/logo.png" alt="Logo Desa Pesudukuh" class="logo-desa" />
+        <div class="header-text">
+          <span class="desa-title">Pemerintah Desa</span>
+          <strong class="desa-name">Pesudukuh</strong>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-section">MENU UTAMA</li>
+        <li>
+          <a href="dashboard3.html" class="menu-item">
+            <i class="bi bi-speedometer2"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="menu-section">LAYANAN DESA</li>
+        <li>
+          <a href="pengajuan surat.html" class="menu-item">
+            <i class="bi bi-envelope-paper"></i>
+            <span>Pengajuan Surat</span>
+          </a>
+        </li>
+        <li>
+          <a href="pembuatan surat2.html" class="menu-item">
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Pembuatan Surat</span>
+          </a>
+        </li>
+
+        <li class="menu-section">INFORMASI PUBLIK</li>
+        <li>
+          <a href="kabar.html" class="menu-item active">
+            <i class="bi bi-newspaper"></i>
+            <span>Kabar Desa</span>
+          </a>
+        </li>
+
+        <li class="menu-section">MANAJEMEN</li>
+        <li>
+          <a href="laporan.html" class="menu-item">
+            <i class="bi bi-bar-chart"></i>
+            <span>Laporan</span>
+          </a>
+        </li>
+        <li>
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span>Profil Akun</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- LOGOUT BUTTON -->
+      <div class="sidebar-logout">
+        <a href="index.html" class="logout-btn">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Keluar</span>
+        </a>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="header-banner">
+        <div class="header-left">
+          <h1>Edit Kabar Desa</h1>
+          <p>Perbarui informasi kabar desa</p>
+        </div>
+
+        <div class="header-right">
+          <button class="btn-back" onclick="history.back()">
+            <i class="bi bi-arrow-left"></i>
+            Kembali
+          </button>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <div class="form-header">
+          <span><i class="bi bi-pencil-square"></i> Form Edit Kabar Desa</span>
+        </div>
+
+        <form action="#" class="kabar-form">
+          <!-- Judul Kabar -->
+          <div class="form-group">
+            <label for="judul">
+              <i class="bi bi-card-text"></i>
+              Judul Kabar Desa
+            </label>
+            <input type="text" id="judul" value="TEST" />
+          </div>
+
+          <!-- Isi Kabar -->
+          <div class="form-group">
+            <label for="isi">
+              <i class="bi bi-file-earmark-text"></i>
+              Isi Kabar Desa
+            </label>
+            <textarea id="isi" rows="6">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores facere aut enim corrupti itaque aperiam libero, quidem nesciunt nam ratione qui ab ipsam recusandae veniam esse! Sequi id ratione minima.</textarea
+            >
+          </div>
+
+          <!-- Tanggal -->
+          <div class="form-group">
+            <label for="tanggal">
+              <i class="bi bi-calendar-event"></i>
+              Tanggal
+            </label>
+            <input type="date" id="tanggal" value="2025-10-01" />
+          </div>
+
+          <!-- Foto Kabar -->
+          <div class="form-group">
+            <label>
+              <i class="bi bi-image"></i>
+              Foto Kabar Desa
+            </label>
+            <div class="file-custom-input">
+              <button type="button" onclick="document.getElementById('foto').click()">Choose Files</button>
+              <input type="file" id="foto" style="display: none" />
+              <span id="file-name">No file chosen</span>
+            </div>
+            <small class="form-help">Biarkan kosong jika tidak ingin mengubah foto</small>
+          </div>
+
+          <!-- Foto Saat Ini -->
+          <div class="form-group">
+            <div class="current-photo-box">
+              <label>
+                <i class="bi bi-image-fill"></i>
+                Foto Saat Ini:
+              </label>
+              <div class="photo-preview">
+                <img src="assets/img/perangkatdesa.jpg" alt="Preview Foto" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Aksi Tombol -->
+          <div class="form-actions">
+            <button type="button" class="btn-secondary" onclick="history.back()">
+              <i class="bi bi-x-circle"></i>
+              Batal
+            </button>
+            <button type="submit" class="btn-primary-update">
+              <i class="bi bi-save"></i>
+              UPDATE KABAR DESA
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-- SIDEBAR TOGGLE -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const toggleIcon = toggleBtn.querySelector("i");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+
+        if (sidebar.classList.contains("collapsed")) {
+          toggleIcon.classList.remove("bi-chevron-left");
+          toggleIcon.classList.add("bi-chevron-right");
+        } else {
+          toggleIcon.classList.remove("bi-chevron-right");
+          toggleIcon.classList.add("bi-chevron-left");
+        }
+      });
+    </script>
+  </body>
+</html>

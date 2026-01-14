@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembuatan Surat</title>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/pembuatan_surat.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <!-- HEADER LOGO DESA -->
+      <div class="sidebar-header">
+        <img src="assets/img/logo.png" alt="Logo Desa Pesudukuh" class="logo-desa" />
+        <div class="header-text">
+          <span class="desa-title">Pemerintah Desa</span>
+          <strong class="desa-name">Pesudukuh</strong>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="menu-section">MENU UTAMA</li>
+        <li>
+          <a href="dashboard.html" class="menu-item">
+            <i class="bi bi-speedometer2"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+
+        <li class="menu-section">LAYANAN DESA</li>
+        <li>
+          <a href="pengajuan surat.html" class="menu-item">
+            <i class="bi bi-envelope-paper"></i>
+            <span>Pengajuan Surat</span>
+          </a>
+        </li>
+        <li>
+          <a href="pembuatan surat.html" class="menu-item active">
+            <i class="bi bi-file-earmark-text"></i>
+            <span>Pembuatan Surat</span>
+          </a>
+        </li>
+
+        <li class="menu-section">INFORMASI PUBLIK</li>
+
+        <li>
+          <a href="kabar.html" class="menu-item">
+            <i class="bi bi-newspaper"></i>
+            <span>Kabar Desa</span>
+          </a>
+        </li>
+
+        <li class="menu-section">MANAJEMEN</li>
+        <li>
+          <a href="laporan.html" class="menu-item">
+            <i class="bi bi-bar-chart"></i>
+            <span>Laporan</span>
+          </a>
+        </li>
+        <li>
+          <a href="profil.html" class="menu-item">
+            <i class="bi bi-person-circle"></i>
+            <span>Profil Akun</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- LOGOUT BUTTON -->
+      <div class="sidebar-logout">
+        <a href="index.html" class="logout-btn">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Keluar</span>
+        </a>
+      </div>
+
+      <!-- Toggle Button -->
+      <div class="sidebar-toggle" id="sidebarToggle">
+        <i class="bi bi-chevron-left"></i>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main surat-page">
+      <!-- HERO CARD -->
+      <section class="surat-hero">
+        <div class="hero-content">
+          <div class="hero-icon">
+            <i class="bi bi-file-earmark-medical"></i>
+          </div>
+          <div class="surat-hero-text">
+            <h2>Pembuatan Surat Administrasi Desa</h2>
+            <p>Pilih jenis surat yang dibutuhkan, lihat contoh surat, lalu lanjutkan ke pengisian formulir pengajuan.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- TOOLBAR -->
+      <div class="surat-toolbar">
+        <div class="title">
+          <i class="bi bi-file-earmark-text"></i>
+          Daftar Template Surat
+        </div>
+
+        <div class="surat-search">
+          <i class="bi bi-search"></i>
+          <input type="text" placeholder="Cari surat..." />
+        </div>
+      </div>
+
+      <!-- GRID CARD -->
+      <section class="surat-grid">
+        <!-- CARD -->
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/BEDA NAMA.jpg')">
+            <img src="assets/img/surat/BEDA NAMA.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Beda Nama</h3>
+            <p>Surat keterangan resmi dari pemerintah desa yang menerangkan adanya perbedaan penulisan nama pada dokumen kependudukan atau administrasi lainnya.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/BEDA NAMA.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="bedanama.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/BELUM PERNAH NIKAH.jpg')">
+            <img src="assets/img/surat/BELUM PERNAH NIKAH.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Belum Menikah</h3>
+            <p>Surat resmi dari pemerintah desa yang menyatakan status perkawinan warga yang belum pernah menikah untuk keperluan administrasi tertentu.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/BELUM PERNAH NIKAH.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="belummenikah.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/KELAHIRAN.jpg')">
+            <img src="assets/img/surat/KELAHIRAN.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Kelahiran</h3>
+            <p>Surat keterangan resmi dari desa yang memuat informasi mengenai peristiwa kelahiran seseorang sebelum diterbitkannya akta kelahiran.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/KELAHIRAN.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="kelahiran.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/KEMATIAN1.jpg')">
+            <img src="assets/img/surat/KEMATIAN1.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Kematian</h3>
+            <p>Surat resmi dari pemerintah desa yang menerangkan peristiwa kematian warga untuk keperluan administrasi kependudukan.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/KEMATIAN1.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="kematian.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/KETERANGAN PENGHASILAN.jpg')">
+            <img src="assets/img/surat/KETERANGAN PENGHASILAN.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Penghasilan</h3>
+            <p>Surat keterangan dari pemerintah desa yang berisi informasi mengenai penghasilan warga sebagai pendukung administrasi dan persyaratan tertentu.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/KETERANGAN PENGHASILAN.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="penghasilan.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/KETERANGAN USAHA.jpg')">
+            <img src="assets/img/surat/KETERANGAN USAHA.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Usaha</h3>
+            <p>Surat keterangan resmi dari desa yang menyatakan keberadaan dan jenis usaha warga sebagai bentuk legalitas usaha.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/KETERANGAN USAHA.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="ketusaha.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/PEMBELIAN SOLAR.jpg')">
+            <img src="assets/img/surat/PEMBELIAN SOLAR.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Pembelian Solar</h3>
+            <p>Surat rekomendasi dari pemerintah desa yang menerangkan izin atau kebutuhan pembelian bahan bakar minyak jenis solar sesuai ketentuan.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/PEMBELIAN SOLAR.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="pembeliansolar.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/PENDUDUK.jpg')">
+            <img src="assets/img/surat/PENDUDUK.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Penduduk</h3>
+            <p>Surat keterangan resmi dari desa yang menyatakan bahwa seseorang tercatat sebagai penduduk dan berdomisili di wilayah desa setempat.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/PENDUDUK.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="penduduk.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/SKCK.jpg')">
+            <img src="assets/img/surat/SKCK.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Pengantar SKCK</h3>
+            <p>Surat pengantar resmi dari pemerintah desa yang diberikan sebagai persyaratan administrasi dalam pengurusan SKCK di kepolisian.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/SKCK.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="pengantar skck.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/SKTM.jpg')">
+            <img src="assets/img/surat/SKTM.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Tidak Mampu</h3>
+            <p>Surat keterangan resmi dari pemerintah desa yang menerangkan kondisi ekonomi warga sebagai dasar pengajuan bantuan sosial atau pendidikan.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/SKTM.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="sktm.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="surat-card">
+          <div class="surat-thumb" onclick="openPreview('assets/img/surat/SURAT IZIN.jpg')">
+            <img src="assets/img/surat/SURAT IZIN.jpg" />
+          </div>
+          <div class="surat-content">
+            <h3>Surat Keterangan Izin Tidak Masuk Kerja</h3>
+            <p>Surat resmi dari pemerintah desa yang menerangkan izin tidak masuk kerja berdasarkan keterangan dan permohonan yang diajukan.</p>
+            <div class="surat-actions">
+              <button class="btn-surat btn-preview" onclick="openPreview('assets/img/surat/SURAT IZIN.jpg')">
+                <i class="bi bi-eye"></i>
+                Lihat Surat
+              </button>
+
+              <a href="izinkerja.html" class="btn-surat btn-create">
+                <i class="bi bi-file-earmark-plus"></i>
+                Buat Surat
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="preview-modal" id="previewModal">
+          <span class="close-preview" onclick="closePreview()">✕</span>
+          <div class="preview-box">
+            <img id="previewImage" src="" alt="Preview Surat" />
+          </div>
+        </div>
+
+        <!-- Tambahkan card lain dengan pola yang sama -->
+      </section>
+    </main>
+
+    <!-- SIDEBAR TOGGLE -->
+    <script>
+      const sidebar = document.getElementById("sidebar");
+      const toggleBtn = document.getElementById("sidebarToggle");
+      const toggleIcon = toggleBtn.querySelector("i");
+
+      toggleBtn.addEventListener("click", () => {
+        sidebar.classList.toggle("collapsed");
+
+        if (sidebar.classList.contains("collapsed")) {
+          toggleIcon.classList.remove("bi-chevron-left");
+          toggleIcon.classList.add("bi-chevron-right");
+        } else {
+          toggleIcon.classList.remove("bi-chevron-right");
+          toggleIcon.classList.add("bi-chevron-left");
+        }
+      });
+    </script>
+
+    <script>
+      function openPreview(imgSrc) {
+        const modal = document.getElementById("previewModal");
+        const image = document.getElementById("previewImage");
+
+        image.src = imgSrc;
+        modal.classList.add("active");
+      }
+
+      function closePreview() {
+        document.getElementById("previewModal").classList.remove("active");
+      }
+    </script>
+  </body>
+</html>

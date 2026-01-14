@@ -1,0 +1,462 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #e7edf8;
+  display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  min-height: 100vh; /* ikut tinggi konten */
+  position: relative; /* BUKAN fixed */
+  background: #1e5cc8;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* COLLAPSE MODE */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 20px 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo-desa {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.desa-title {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.desa-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Header saat collapse */
+.sidebar.collapsed .header-text {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+}
+
+/* =========================
+   SIDEBAR MENU (SCROLLABLE)
+========================= */
+.sidebar-menu {
+  list-style: none;
+  overflow: visible; /* SEMUA MENU TERLIHAT */
+}
+
+/* Scrollbar */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Section title */
+.menu-section {
+  margin-top: 7px;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+/* Menu item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  border-left: 3px solid transparent;
+  transition: 0.2s ease;
+}
+
+.menu-item i {
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  border-left-color: #fff;
+  opacity: 1;
+  font-weight: 600; /* BOLD saat aktif */
+}
+
+/* Menu saat collapse */
+.sidebar.collapsed .menu-item span,
+.sidebar.collapsed .menu-section {
+  display: none;
+}
+
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+.sidebar-logout {
+  padding: 35px 20px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center; /* center vertikal */
+  justify-content: center; /* center horizontal */
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar.collapsed .logout-btn span {
+  display: none;
+}
+
+.sidebar.collapsed .logout-btn {
+  justify-content: center;
+}
+
+/* =========================
+   TOGGLE BUTTON
+========================= */
+.sidebar-toggle {
+  position: relative;
+  bottom: 15px;
+  margin: 20px auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.main {
+  padding: 25px;
+  width: calc(100% - 240px);
+  background: var(--bg-soft);
+}
+
+.sidebar.collapsed ~ .main {
+  width: calc(100% - 80px);
+}
+
+/* ==============================
+   HERO CARD (CLEAN VERSION)
+============================== */
+.surat-hero {
+  background: linear-gradient(135deg, #2e4fbe, #3b82f6);
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(30, 92, 200, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-icon {
+  width: 65px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* Teks Hero */
+.surat-hero-text h2 {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.surat-hero-text p {
+  font-size: 14px;
+  margin-top: 8px;
+  opacity: 0.9;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .surat-hero {
+    padding: 30px 20px;
+  }
+
+  .surat-hero-text p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ==============================
+   HEADER LIST + SEARCH
+============================== */
+.surat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.surat-toolbar .title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: #615c5c;
+}
+
+.surat-toolbar .title i {
+  font-size: 18px;
+}
+
+.surat-search {
+  background: #fff;
+  border-radius: 20px;
+  padding: 6px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.surat-search input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+}
+
+/* ==============================
+   GRID CARD SURAT
+============================== */
+.surat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 22px;
+}
+
+/* ==============================
+   CARD SURAT
+============================== */
+.surat-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: 0.3s ease;
+}
+
+.surat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ==============================
+   THUMBNAIL SURAT
+============================== */
+.surat-thumb {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.surat-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.75);
+  transition: 0.3s ease;
+}
+
+.surat-card:hover .surat-thumb img {
+  filter: brightness(0.9);
+}
+
+/* ==============================
+   CONTENT
+============================== */
+.surat-content {
+  padding: 18px 20px 20px;
+}
+
+.surat-content h3 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #2e2e2e;
+}
+
+.surat-content p {
+  font-size: 13px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+/* ==============================
+   BUTTONS
+============================== */
+.surat-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-surat {
+  flex: 1;
+  padding: 9px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+/* Lihat Surat */
+.btn-preview {
+  background: #f1f3ff;
+  color: #4e73df;
+  border: 1px solid #dbe3ff;
+}
+
+.btn-preview:hover {
+  background: #e2e8ff;
+}
+
+/* Buat Surat */
+.btn-create {
+  background: linear-gradient(135deg, #4e73df, #224abe);
+  color: #fff;
+}
+
+.btn-create:hover {
+  filter: brightness(1.1);
+}
+
+/* ==============================
+   MODAL PREVIEW
+============================== */
+.preview-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.preview-modal.active {
+  display: flex;
+}
+
+.preview-box {
+  width: 520px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.preview-box img {
+  width: 100%;
+}
+
+.close-preview {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+}

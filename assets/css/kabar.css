@@ -1,0 +1,514 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #e7edf8;
+  display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  min-height: 100vh; /* ikut tinggi konten */
+  position: relative; /* BUKAN fixed */
+  background: #1e5cc8;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* COLLAPSE MODE */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 20px 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo-desa {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.desa-title {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.desa-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Header saat collapse */
+.sidebar.collapsed .header-text {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+}
+
+/* =========================
+   SIDEBAR MENU (SCROLLABLE)
+========================= */
+.sidebar-menu {
+  list-style: none;
+  overflow: visible; /* SEMUA MENU TERLIHAT */
+}
+
+/* Scrollbar */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Section title */
+.menu-section {
+  margin-top: 7px;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+/* Menu item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  border-left: 3px solid transparent;
+  transition: 0.2s ease;
+}
+
+.menu-item i {
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  border-left-color: #fff;
+  opacity: 1;
+  font-weight: 600; /* BOLD saat aktif */
+}
+
+/* Menu saat collapse */
+.sidebar.collapsed .menu-item span,
+.sidebar.collapsed .menu-section {
+  display: none;
+}
+
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+.sidebar-logout {
+  padding: 35px 20px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center; /* center vertikal */
+  justify-content: center; /* center horizontal */
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar.collapsed .logout-btn span {
+  display: none;
+}
+
+.sidebar.collapsed .logout-btn {
+  justify-content: center;
+}
+
+/* =========================
+   TOGGLE BUTTON
+========================= */
+.sidebar-toggle {
+  position: relative;
+  bottom: 15px;
+  margin: 20px auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.main {
+  padding: 25px;
+  width: calc(100% - 240px);
+  background: var(--bg-soft);
+}
+
+.sidebar.collapsed ~ .main {
+  width: calc(100% - 80px);
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main {
+  padding: 32px;
+  width: calc(100% - 240px);
+  background: #eef3fb;
+  min-height: 100vh;
+}
+
+.sidebar.collapsed ~ .main {
+  width: calc(100% - 80px);
+}
+
+.header-banner {
+  background: linear-gradient(135deg, #2e4fbe, #3b82f6);
+  border-radius: 16px;
+  color: #fff;
+  padding: 20px 40px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(30, 92, 200, 0.2);
+}
+
+.banner-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.banner-icon {
+  width: 65px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Teks Header */
+.banner-text h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.banner-text p {
+  font-size: 14px;
+  margin: 4px 0 0 0;
+  opacity: 0.85;
+}
+
+/* Responsif untuk Mobile */
+@media (max-width: 576px) {
+  .header-banner {
+    padding: 20px;
+  }
+  .banner-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+  .banner-text h1 {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   NEWS GRID
+========================= */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+}
+
+/* =========================
+   NEWS CARD
+========================= */
+.news-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 14px 32px rgba(30, 92, 200, 0.15);
+  display: flex;
+  flex-direction: column;
+  transition: 0.35s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 38px rgba(30, 92, 200, 0.25);
+}
+
+/* Thumbnail */
+.news-thumbnail img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+.news-content {
+  padding: 20px 22px;
+  flex: 1;
+}
+
+.news-date {
+  display: inline-block;
+  background: rgba(30, 92, 200, 0.1);
+  color: #1e5cc8;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.news-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 10px;
+}
+
+.news-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.65;
+}
+
+/* =========================
+   CARD FOOTER
+========================= */
+.news-footer {
+  padding: 18px 22px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid #e5ecf9;
+}
+
+/* Detail button */
+.btn-detail {
+  background: linear-gradient(135deg, #1e5cc8, #1e3a8a);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-detail:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-edit {
+  background: #f59e0b;
+}
+
+.btn-delete {
+  background: #ef4444;
+}
+
+.btn-icon:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CARD FOOTER VERTICAL
+========================= */
+.news-footer.vertical {
+  padding: 18px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-top: 1px solid #e5ecf9;
+}
+
+/* =========================
+   PRIMARY ACTION BUTTONS
+========================= */
+.primary-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-detail,
+.btn-add-card {
+  flex: 1;
+  padding: 11px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+/* Lihat Detail */
+.btn-detail {
+  background: linear-gradient(135deg, #1e5cc8, #2b55c7);
+  color: #ffffff;
+}
+
+.btn-detail:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+/* Tambah Kabar */
+.btn-add-card {
+  background: #e8efff;
+  color: #1e5cc8;
+  border: 1px solid #1e5cc8;
+}
+
+.btn-add-card:hover {
+  background: #dbe7ff;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.footer-divider {
+  height: 1px;
+  width: 100%;
+  background: #c7cacf;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.action-buttons.center {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.btn-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-edit {
+  background: #f59e0b;
+}
+
+.btn-delete {
+  background: #ef4444;
+}
+
+.btn-icon:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
+}

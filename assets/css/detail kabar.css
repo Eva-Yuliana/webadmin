@@ -1,0 +1,477 @@
+/* =========================
+   RESET & BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #dde3ef;
+  display: flex;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  min-height: 100vh; /* ikut tinggi konten */
+  position: relative; /* BUKAN fixed */
+  background: #1e5cc8;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* COLLAPSE MODE */
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 20px 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.logo-desa {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3));
+}
+
+.header-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.desa-title {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.desa-name {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Header saat collapse */
+.sidebar.collapsed .header-text {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+}
+
+/* =========================
+   SIDEBAR MENU (SCROLLABLE)
+========================= */
+.sidebar-menu {
+  list-style: none;
+  overflow: visible; /* SEMUA MENU TERLIHAT */
+}
+
+/* Scrollbar */
+.sidebar-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+/* Section title */
+.menu-section {
+  margin-top: 7px;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  opacity: 0.6;
+}
+
+/* Menu item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+  border-left: 3px solid transparent;
+  transition: 0.2s ease;
+}
+
+.menu-item i {
+  font-size: 18px;
+}
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+.menu-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  border-left-color: #fff;
+  opacity: 1;
+  font-weight: 600; /* BOLD saat aktif */
+}
+
+/* Menu saat collapse */
+.sidebar.collapsed .menu-item span,
+.sidebar.collapsed .menu-section {
+  display: none;
+}
+
+.sidebar.collapsed .menu-item {
+  justify-content: center;
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+.sidebar-logout {
+  padding: 35px 20px;
+  font-weight: 600;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center; /* center vertikal */
+  justify-content: center; /* center horizontal */
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar.collapsed .logout-btn span {
+  display: none;
+}
+
+.sidebar.collapsed .logout-btn {
+  justify-content: center;
+}
+
+/* =========================
+   TOGGLE BUTTON
+========================= */
+.sidebar-toggle {
+  position: relative;
+  bottom: 15px;
+  margin: 20px auto;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.main {
+  padding: 25px;
+  width: calc(100% - 240px);
+  background: var(--bg-soft);
+}
+
+.sidebar.collapsed ~ .main {
+  width: calc(100% - 80px);
+}
+
+/* =========================
+   DETAIL KABAR PAGE
+========================= */
+.detail-kabar {
+  background: #e4eaf6;
+}
+
+/* =========================
+   HEADER
+========================= */
+.detail-header {
+  background: linear-gradient(135deg, #2e4fbe, #3b82f6);
+  color: #fff;
+  padding: 18px 26px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+}
+
+.detail-header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.detail-header-left i {
+  font-size: 26px;
+}
+
+.detail-header-left h2 {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.detail-header-right {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* =========================
+   GRID LAYOUT
+========================= */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 26px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 22px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  margin-bottom: 22px;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #2563eb;
+
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+/* Icon judul */
+.card-title i {
+  font-size: 17px;
+  color: #2563eb;
+}
+
+/* Garis bawah */
+.card-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: #dce0e6;
+}
+
+.card-text {
+  font-size: 14.5px;
+  line-height: 1.75;
+  color: #555;
+  text-align: justify;
+  margin-top: 12px;
+}
+
+/* =========================
+   GALERI FOTO
+========================= */
+.gallery {
+  display: flex;
+  gap: 16px;
+}
+
+.gallery-img {
+  width: 220px;
+  border-radius: 8px;
+  border: 2px solid #cccfd1;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   AUTHOR
+========================= */
+.author-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #2563eb;
+}
+
+/* Nama Penulis */
+.author-name {
+  font-size: 14px;
+  font-weight: 530; /* TIDAK terlalu tebal */
+  color: #484646;
+  line-height: 1.3;
+}
+
+/* Role Penulis */
+.author-role {
+  font-size: 12.5px;
+  color: #777;
+  margin-top: 2px; /* agar benar-benar di bawah */
+}
+
+/* =========================
+   INFO LIST
+========================= */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e3e8f4;
+  border-radius: 12px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+/* Item */
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  font-size: 14px;
+  border-bottom: 1px solid #eef1f8;
+}
+
+/* Hilangkan border terakhir */
+.info-list li:last-child {
+  border-bottom: none;
+}
+
+/* Label kiri */
+.info-list li span:first-child {
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Value kanan */
+.info-list li strong {
+  color: #484646;
+  font-weight: 530;
+}
+
+/* =========================
+   BADGE
+========================= */
+.info-list .badge {
+  background: #1e5cc8;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* =========================
+   BUTTON
+========================= */
+.btn-back {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(135deg, #1e40af, #2563eb);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* =========================
+   IMAGE MODAL
+========================= */
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.image-modal.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.image-modal img {
+  max-width: 90%;
+  max-height: 85%;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.image-close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
+}
