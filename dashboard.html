@@ -85,6 +85,11 @@
       </div>
     </aside>
 
+    <!-- HAMBURGER MOBILE -->
+    <div class="mobile-hamburger" id="mobileHamburger">
+      <i class="bi bi-list"></i>
+    </div>
+
     <!-- MAIN CONTENT -->
     <main class="main">
       <!-- TOP CONTENT -->
@@ -113,81 +118,101 @@
       </section>
 
       <section class="hero-card">
-        <div class="hero-text">
-          <h2>Dashboard Admin</h2>
-          <p>Kelola pengajuan, pembuatan, dan laporan surat menyurat secara online dan terpusat.</p>
-          <a href="pembuatan surat.html" class="btn-primary"> Kelola Surat </a>
-        </div>
-        <div class="hero-image">
-          <img src="assets/img/ilustrasi.png" alt="Dashboard" />
+        <div class="circle-decor decor-1"></div>
+        <div class="circle-decor decor-2"></div>
+
+        <div class="hero-content">
+          <div class="hero-text">
+            <h2>Dashboard Admin</h2>
+            <p>Kelola pengajuan, pembuatan, dan laporan surat menyurat secara <strong>online</strong> dan <strong>terpusat</strong> untuk pelayanan yang lebih cepat.</p>
+            <div class="hero-actions">
+              <a href="pembuatan surat.html" class="btn-hero-primary"> <i class="bi bi-file-earmark-plus"></i> Kelola Surat </a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="assets/img/ilustrasi.png" alt="Dashboard Illustration" />
+          </div>
         </div>
       </section>
 
-      <!-- CARDS -->
       <div class="cards-row">
         <div class="card summary-card primary">
-          <div class="card-info">
-            <p class="title">Total Pengajuan</p>
-            <h2>6</h2>
-            <span class="subtitle">Keseluruhan pengajuan</span>
+          <div class="card-content">
+            <div class="card-info">
+              <p class="card-title">Total Pengajuan</p>
+              <h2 class="card-value">6</h2>
+              <span class="card-subtitle">Keseluruhan data</span>
+            </div>
+            <div class="card-icon">
+              <i class="bi bi-envelope-paper"></i>
+            </div>
           </div>
-          <i class="bi bi-envelope-fill icon"></i>
         </div>
 
         <div class="card summary-card warning">
-          <div class="card-info">
-            <p class="title">Tertunda</p>
-            <h2>0</h2>
-            <span class="subtitle">Menunggu Verifikasi</span>
+          <div class="card-content">
+            <div class="card-info">
+              <p class="card-title">Tertunda</p>
+              <h2 class="card-value">0</h2>
+              <span class="card-subtitle">Menunggu Verifikasi</span>
+            </div>
+            <div class="card-icon">
+              <i class="bi bi-clock-history"></i>
+            </div>
           </div>
-          <i class="bi bi-clock icon"></i>
-          <!-- Icon diganti sesuai status tertunda -->
         </div>
 
         <div class="card summary-card info">
-          <div class="card-info">
-            <p class="title">Diproses</p>
-            <h2>2</h2>
-            <span class="subtitle">Sedang dalam proses</span>
+          <div class="card-content">
+            <div class="card-info">
+              <p class="card-title">Diproses</p>
+              <h2 class="card-value">2</h2>
+              <span class="card-subtitle">Sedang berjalan</span>
+            </div>
+            <div class="card-icon">
+              <i class="bi bi-gear-wide-connected"></i>
+            </div>
           </div>
-          <i class="bi bi-pencil-square icon"></i>
-          <!-- Icon diganti sesuai status diproses -->
         </div>
 
         <div class="card summary-card success">
-          <div class="card-info">
-            <p class="title">Selesai</p>
-            <h2>5</h2>
-            <span class="subtitle">Berhasil diselesaikan</span>
+          <div class="card-content">
+            <div class="card-info">
+              <p class="card-title">Selesai</p>
+              <h2 class="card-value">5</h2>
+              <span class="card-subtitle">Sudah diproses</span>
+            </div>
+            <div class="card-icon">
+              <i class="bi bi-check-circle-fill"></i>
+            </div>
           </div>
-          <i class="bi bi-check-circle-fill icon"></i>
-          <!-- Icon diganti sesuai status selesai -->
         </div>
       </div>
 
       <div class="chart-row">
         <div class="chart-card pie-area">
-          <h3>Pie Chart - Statistik Surat</h3>
-          <canvas id="pieChart"></canvas>
+          <div class="card-header-custom">
+            <div class="icon-title">
+              <i class="bi bi-pie-chart-fill"></i>
+              <h3>Statistik Pengajuan Surat</h3>
+            </div>
+          </div>
+          <div class="chart-body">
+            <canvas id="pieChart"></canvas>
+          </div>
         </div>
 
-        <!-- FULL CALENDAR -->
-        <div class="calendar-card">
+        <div class="chart-card calendar-area">
           <div class="calendar-header">
-            <button id="prevMonth"><i class="bi bi-chevron-left"></i></button>
             <h3 id="monthYear"></h3>
-            <button id="nextMonth"><i class="bi bi-chevron-right"></i></button>
+            <div class="calendar-nav">
+              <button id="prevMonth"><i class="bi bi-chevron-left"></i></button>
+              <button id="nextMonth"><i class="bi bi-chevron-right"></i></button>
+            </div>
           </div>
 
-          <div class="calendar-weekdays">
-            <div>Ming</div>
-            <div>Sen</div>
-            <div>Sel</div>
-            <div>Rab</div>
-            <div>Kam</div>
-            <div>Jum</div>
-            <div>Sab</div>
-          </div>
+          <div class="calendar-weekdays"><span>Min</span><span>Sen</span><span>Sel</span><span>Rab</span><span>Kam</span><span>Jum</span><span>Sab</span></div>
 
           <div class="calendar-days" id="calendarDays"></div>
         </div>
@@ -196,154 +221,234 @@
       <div class="dashboard-row">
         <!-- KABAR DESA TERBARU -->
         <div class="info-card">
+          <!-- HEADER -->
           <div class="info-header">
-            <i class="bi bi-newspaper"></i>
+            <div class="info-icon-box">
+              <i class="bi bi-newspaper"></i>
+            </div>
             <h3>Kabar Desa Terbaru</h3>
           </div>
 
+          <!-- IMAGE -->
           <div class="info-image">
             <img src="assets/img/perangkatdesa.jpg" alt="Kabar Desa" />
+            <span class="image-label">Berita Desa</span>
           </div>
 
+          <!-- CONTENT ITEM -->
           <div class="info-item">
-            <div class="info-icon green">
+            <div class="info-badge">
               <i class="bi bi-house-door"></i>
             </div>
+
             <div class="info-content">
               <h4>TEST</h4>
-              <span>01 Oktober 2025</span>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores facere aut...</p>
+              <span class="info-date">
+                <i class="bi bi-calendar-event"></i>
+                01 Oktober 2025
+              </span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores facere aut, laboriosam quidem eaque.</p>
             </div>
           </div>
 
+          <!-- FOOTER -->
           <div class="info-footer">
-            <a href="kabar.html" class="btn-lihat-semua"> Lihat Semua <i class="bi bi-arrow-right"></i> </a>
+            <a href="kabar.html" class="btn-lihat-semua">
+              Lihat Semua Berita
+              <i class="bi bi-arrow-right"></i>
+            </a>
           </div>
         </div>
 
-        <!-- AKTIVITAS TERBARU -->
         <section class="activity-wrapper">
           <div class="activity-title">
-            <i class="bi bi-clock-history"></i>
+            <div class="icon-box">
+              <i class="bi bi-clock-history"></i>
+            </div>
             <h3>Aktivitas Terbaru</h3>
           </div>
 
-          <div class="activity-row">
-            <div class="activity-info">
-              <span class="dot pending"></span>
-              <span class="name">Nama</span>
+          <div class="activity-list">
+            <div class="activity-row">
+              <div class="activity-info">
+                <div class="status-indicator pending"></div>
+                <div class="user-details">
+                  <span class="name">Budi Santoso</span>
+                  <span class="time">Baru saja</span>
+                </div>
+              </div>
+              <span class="badge badge-pending">Menunggu Verifikasi</span>
             </div>
-            <span class="badge pending">Menunggu Verifikasi</span>
+
+            <div class="activity-row">
+              <div class="activity-info">
+                <div class="status-indicator success"></div>
+                <div class="user-details">
+                  <span class="name">Siti Aminah</span>
+                  <span class="time">2 jam yang lalu</span>
+                </div>
+              </div>
+              <span class="badge badge-success">Selesai</span>
+            </div>
+
+            <div class="activity-row">
+              <div class="activity-info">
+                <div class="status-indicator info"></div>
+                <div class="user-details">
+                  <span class="name">Andi Wijaya</span>
+                  <span class="time">5 jam yang lalu</span>
+                </div>
+              </div>
+              <span class="badge badge-info">Disetujui</span>
+            </div>
           </div>
 
-          <div class="activity-row">
-            <div class="activity-info">
-              <span class="dot success"></span>
-              <span class="name">Nama</span>
-            </div>
-            <span class="badge success">Selesai</span>
-          </div>
-
-          <div class="activity-row">
-            <div class="activity-info">
-              <span class="dot success"></span>
-              <span class="name">Nama</span>
-            </div>
-            <span class="badge success">Disetujui</span>
-          </div>
-
-          <!-- FOOTER BUTTON -->
           <div class="activity-footer">
-            <a href="laporan.html" class="btn-lihat-semua"> Lihat Semua <i class="bi bi-arrow-right"></i> </a>
+            <a href="laporan.html" class="btn-lihat-semua">
+              Lihat Semua Aktivitas
+              <i class="bi bi-arrow-right-short"></i>
+            </a>
           </div>
         </section>
       </div>
     </main>
 
-    <!-- CALENDAR SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
-      const monthYear = document.getElementById("monthYear");
-      const calendarDays = document.getElementById("calendarDays");
-      const prevMonthBtn = document.getElementById("prevMonth");
-      const nextMonthBtn = document.getElementById("nextMonth");
+      document.addEventListener("DOMContentLoaded", function () {
+        const monthYear = document.getElementById("monthYear");
+        const calendarDays = document.getElementById("calendarDays");
+        const prevMonthBtn = document.getElementById("prevMonth");
+        const nextMonthBtn = document.getElementById("nextMonth");
 
-      let date = new Date();
+        let date = new Date();
 
-      function renderCalendar() {
-        const year = date.getFullYear();
-        const month = date.getMonth();
+        function renderCalendar() {
+          const year = date.getFullYear();
+          const month = date.getMonth();
 
-        const firstDay = new Date(year, month, 1).getDay();
-        const lastDate = new Date(year, month + 1, 0).getDate();
-        const prevLastDate = new Date(year, month, 0).getDate();
+          const firstDay = new Date(year, month, 1).getDay();
+          const lastDate = new Date(year, month + 1, 0).getDate();
+          const prevLastDate = new Date(year, month, 0).getDate();
 
-        const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+          const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
 
-        monthYear.innerHTML = months[month] + " " + year;
-        calendarDays.innerHTML = "";
+          if (monthYear) monthYear.innerHTML = `${months[month]} ${year}`;
+          if (calendarDays) {
+            calendarDays.innerHTML = "";
 
-        for (let i = firstDay; i > 0; i--) {
-          calendarDays.innerHTML += `<div class="inactive">${prevLastDate - i + 1}</div>`;
-        }
+            // Hari dari bulan sebelumnya (warna abu-abu/inactive)
+            for (let i = firstDay; i > 0; i--) {
+              calendarDays.innerHTML += `<div class="inactive">${prevLastDate - i + 1}</div>`;
+            }
 
-        for (let i = 1; i <= lastDate; i++) {
-          let today = new Date();
-          let cls = "";
+            // Hari bulan saat ini
+            for (let i = 1; i <= lastDate; i++) {
+              let today = new Date();
+              let cls = i === today.getDate() && month === today.getMonth() && year === today.getFullYear() ? "today" : "";
+              calendarDays.innerHTML += `<div class="${cls}">${i}</div>`;
+            }
 
-          if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
-            cls = "today";
+            // Melengkapi grid agar selalu 6 baris (42 kotak)
+            const totalSlots = 42;
+            const currentSlots = firstDay + lastDate;
+            for (let i = 1; i <= totalSlots - currentSlots; i++) {
+              calendarDays.innerHTML += `<div class="inactive">${i}</div>`;
+            }
           }
-
-          calendarDays.innerHTML += `<div class="${cls}">${i}</div>`;
         }
 
-        const nextDays = 42 - (firstDay + lastDate);
-        for (let i = 1; i <= nextDays; i++) {
-          calendarDays.innerHTML += `<div class="inactive">${i}</div>`;
+        // Event Listeners Navigasi
+        if (prevMonthBtn) {
+          prevMonthBtn.onclick = () => {
+            date.setMonth(date.getMonth() - 1);
+            renderCalendar();
+          };
         }
-      }
 
-      prevMonthBtn.addEventListener("click", () => {
-        date.setMonth(date.getMonth() - 1);
+        if (nextMonthBtn) {
+          nextMonthBtn.onclick = () => {
+            date.setMonth(date.getMonth() + 1);
+            renderCalendar();
+          };
+        }
+
+        // Jalankan kalender pertama kali
         renderCalendar();
-      });
 
-      nextMonthBtn.addEventListener("click", () => {
-        date.setMonth(date.getMonth() + 1);
-        renderCalendar();
+        // ==========================================
+        // 2. LOGIKA PIE/DOUGHNUT CHART
+        // ==========================================
+        const chartElement = document.getElementById("pieChart");
+        if (chartElement) {
+          const ctx = chartElement.getContext("2d");
+          new Chart(ctx, {
+            type: "doughnut",
+            data: {
+              labels: ["Diterima", "Diproses", "Ditolak"],
+              datasets: [
+                {
+                  data: [65, 25, 10],
+                  backgroundColor: ["#4e73df", "#1cc88a", "#f6c23e"],
+                  hoverBackgroundColor: ["#2e59d9", "#17a673", "#dda20a"],
+                  borderWidth: 5,
+                  borderColor: "#ffffff",
+                },
+              ],
+            },
+            options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                legend: {
+                  position: "bottom",
+                  labels: {
+                    padding: 20,
+                    usePointStyle: true,
+                    font: { size: 12, weight: "600", family: "'Inter', sans-serif" },
+                  },
+                },
+              },
+              cutout: "75%",
+            },
+          });
+        }
       });
-
-      renderCalendar();
     </script>
 
     <!-- SIDEBAR TOGGLE -->
     <script>
       const sidebar = document.getElementById("sidebar");
-      const toggleBtn = document.getElementById("sidebarToggle");
-      const toggleIcon = toggleBtn.querySelector("i");
+      const desktopToggle = document.getElementById("sidebarToggle");
+      const desktopIcon = desktopToggle.querySelector("i");
+      const mobileHamburger = document.getElementById("mobileHamburger");
 
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("collapsed");
+      // DESKTOP TOGGLE
+      desktopToggle.addEventListener("click", () => {
+        if (window.innerWidth > 768) {
+          sidebar.classList.toggle("collapsed");
 
-        if (sidebar.classList.contains("collapsed")) {
-          toggleIcon.classList.remove("bi-chevron-left");
-          toggleIcon.classList.add("bi-chevron-right");
-        } else {
-          toggleIcon.classList.remove("bi-chevron-right");
-          toggleIcon.classList.add("bi-chevron-left");
+          if (sidebar.classList.contains("collapsed")) {
+            desktopIcon.classList.replace("bi-chevron-left", "bi-chevron-right");
+          } else {
+            desktopIcon.classList.replace("bi-chevron-right", "bi-chevron-left");
+          }
         }
       });
-    </script>
 
-    <!-- PIE CHART -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      new Chart(document.getElementById("pieChart"), {
-        type: "pie",
-        data: {
-          labels: ["Diterima", "Diproses", "Ditolak"],
-          datasets: [{ data: [65, 25, 10] }],
-        },
+      // MOBILE HAMBURGER
+      mobileHamburger.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.toggle("show");
+        }
+      });
+
+      // AUTO CLOSE MOBILE
+      document.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768 && sidebar.classList.contains("show") && !sidebar.contains(e.target) && !mobileHamburger.contains(e.target)) {
+          sidebar.classList.remove("show");
+        }
       });
     </script>
   </body>

@@ -707,3 +707,212 @@ body {
     align-items: flex-start;
   }
 }
+
+/* ====================
+   MOBILE RESPONSIVE 
+===================== */
+
+/* ===== GLOBAL MOBILE ===== */
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* SIDEBAR → SLIDE MOBILE */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1200;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* MAIN FULL WIDTH */
+  .main {
+    width: 100% !important;
+    padding: 18px;
+  }
+
+  .sidebar.collapsed ~ .main {
+    width: 100% !important;
+  }
+
+  /* DESKTOP COLLAPSE BUTTON DISABLE */
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* ===== REPORT CARD MOBILE ===== */
+@media (max-width: 768px) {
+  .report-card {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .report-left h3 {
+    font-size: 18px;
+  }
+
+  .report-left p {
+    font-size: 14px;
+  }
+
+  .report-summary {
+    flex-wrap: wrap;
+  }
+
+  .report-box {
+    flex: 1 1 100%;
+  }
+}
+
+/* ===== FILTER FORM ===== */
+@media (max-width: 768px) {
+  .filter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-filter {
+    width: 100%;
+  }
+}
+
+/* ===== TABLE RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .table-card {
+    padding: 18px;
+  }
+
+  .table-header h3 {
+    font-size: 15px;
+  }
+
+  .table-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-controls-right {
+    width: 100%;
+  }
+
+  .table-controls-right input {
+    width: 100%;
+  }
+
+  .table-actions {
+    flex-wrap: wrap;
+  }
+
+  .btn-export {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .pagination {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ===== TABLE SCROLL MOBILE ===== */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .data-table {
+    min-width: 900px;
+  }
+}
+
+/* ===== ACTION BUTTON MOBILE ===== */
+@media (max-width: 576px) {
+  .table-action {
+    flex-direction: column;
+  }
+
+  .action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+}

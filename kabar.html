@@ -84,6 +84,11 @@
       </div>
     </aside>
 
+    <!-- HAMBURGER MOBILE -->
+    <div class="mobile-hamburger" id="mobileHamburger">
+      <i class="bi bi-list"></i>
+    </div>
+
     <!-- MAIN CONTENT -->
     <main class="main">
       <!-- PAGE HEADER -->
@@ -188,18 +193,34 @@
     <!-- SIDEBAR TOGGLE -->
     <script>
       const sidebar = document.getElementById("sidebar");
-      const toggleBtn = document.getElementById("sidebarToggle");
-      const toggleIcon = toggleBtn.querySelector("i");
+      const desktopToggle = document.getElementById("sidebarToggle");
+      const desktopIcon = desktopToggle.querySelector("i");
+      const mobileHamburger = document.getElementById("mobileHamburger");
 
-      toggleBtn.addEventListener("click", () => {
-        sidebar.classList.toggle("collapsed");
+      // DESKTOP TOGGLE
+      desktopToggle.addEventListener("click", () => {
+        if (window.innerWidth > 768) {
+          sidebar.classList.toggle("collapsed");
 
-        if (sidebar.classList.contains("collapsed")) {
-          toggleIcon.classList.remove("bi-chevron-left");
-          toggleIcon.classList.add("bi-chevron-right");
-        } else {
-          toggleIcon.classList.remove("bi-chevron-right");
-          toggleIcon.classList.add("bi-chevron-left");
+          if (sidebar.classList.contains("collapsed")) {
+            desktopIcon.classList.replace("bi-chevron-left", "bi-chevron-right");
+          } else {
+            desktopIcon.classList.replace("bi-chevron-right", "bi-chevron-left");
+          }
+        }
+      });
+
+      // MOBILE HAMBURGER
+      mobileHamburger.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          sidebar.classList.toggle("show");
+        }
+      });
+
+      // AUTO CLOSE MOBILE
+      document.addEventListener("click", (e) => {
+        if (window.innerWidth <= 768 && sidebar.classList.contains("show") && !sidebar.contains(e.target) && !mobileHamburger.contains(e.target)) {
+          sidebar.classList.remove("show");
         }
       });
     </script>

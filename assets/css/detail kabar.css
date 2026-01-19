@@ -475,3 +475,213 @@ body {
     width: 100%;
   }
 }
+
+/* ====================
+   MOBILE RESPONSIVE 
+===================== */
+
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* ===== SIDEBAR MOBILE ===== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 240px;
+    height: 100vh;
+    z-index: 1200;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* ===== MAIN FULL WIDTH ===== */
+  .main {
+    width: 100% !important;
+    padding: 20px;
+  }
+
+  /* ===== SEMBUNYIKAN TOGGLE DESKTOP ===== */
+  .sidebar-toggle {
+    display: none;
+  }
+
+  /* ===== HAMBURGER MOBILE ===== */
+  .mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1300;
+    background: #1e5cc8;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    font-size: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  /* ===== HEADER ===== */
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .detail-header-left h2 {
+    font-size: 17px;
+  }
+
+  .detail-header-right {
+    font-size: 12px;
+  }
+
+  /* ===== GRID JADI SATU KOLOM ===== */
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* ===== CARD ===== */
+  .card {
+    padding: 18px;
+  }
+
+  .card-title {
+    font-size: 15px;
+  }
+
+  .card-text {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* ===== GALERI FOTO ===== */
+  .gallery {
+    flex-direction: column;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
+
+  /* ===== AUTHOR ===== */
+  .author-box {
+    gap: 12px;
+  }
+
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* ===== INFO LIST ===== */
+  .info-list li {
+    font-size: 13.5px;
+    padding: 12px 14px;
+  }
+
+  /* ===== BUTTON ===== */
+  .btn-back {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* ===== EXTRA SMALL DEVICE ===== */
+@media (max-width: 576px) {
+  .detail-header-left i {
+    font-size: 22px;
+  }
+
+  .detail-header-left h2 {
+    font-size: 16px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .card-title {
+    font-size: 14.5px;
+  }
+
+  .card-text {
+    font-size: 13.5px;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+}

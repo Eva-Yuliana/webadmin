@@ -270,55 +270,24 @@ body {
 .btn-back {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-
+  gap: 6px;
   padding: 10px 18px;
-  border-radius: 12px;
-
-  background: #5a7eeb;
-  color: #ffffff;
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-
-  font-size: 14px;
+  background: #f1f5f9;
+  color: #1e5cc8;
   font-weight: 600;
-  text-decoration: none;
-
-  transition: all 0.25s ease;
-  box-shadow: 0 6px 16px rgba(78, 115, 223, 0.35);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
 }
 
-/* ICON */
 .btn-back i {
   font-size: 16px;
-  color: #ffffff;
+  color: #1e5cc8;
 }
 
-/* HOVER */
 .btn-back:hover {
-  transform: translateX(-4px);
-  box-shadow: 0 10px 24px rgba(78, 115, 223, 0.45);
-  background: #6b87e3;
-}
-
-/* ACTIVE (DIKLIK) */
-.btn-back:active {
-  transform: scale(0.96);
-  box-shadow: 0 4px 10px rgba(78, 115, 223, 0.3);
-}
-
-/* RESPONSIVE */
-@media (max-width: 576px) {
-  .btn-back {
-    padding: 8px 14px;
-    font-size: 13px;
-  }
-
-  .btn-back i {
-    font-size: 14px;
-  }
+  background: #e5e9f0;
 }
 
 /* =========================
@@ -629,4 +598,200 @@ body {
   width: 100%;
   height: 1px;
   background: #c4c5c8; /* abu tipis */
+}
+
+/* ====================
+   MOBILE RESPONSIVE 
+===================== */
+
+/* TABLET & MOBILE */
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* ===== SIDEBAR SLIDE ===== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1200;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* ===== MAIN FULL WIDTH ===== */
+  .main {
+    width: 100% !important;
+    padding: 20px;
+  }
+
+  /* ===== GRID JADI SATU KOLOM ===== */
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== HEADER ===== */
+  .detail-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .detail-header h2 {
+    font-size: 17px;
+  }
+
+  /* ===== CARD ===== */
+  .detail-card {
+    padding: 22px;
+  }
+
+  /* ===== INFO GRID ===== */
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-box.highlight {
+    grid-column: span 1;
+  }
+
+  /* ===== FORM ===== */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* ===== SIDE CARD ===== */
+  .detail-side {
+    margin-top: 20px;
+  }
+
+  /* ===== BUTTON ===== */
+  .btn-back {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .btn-download,
+  .btn-print {
+    font-size: 14px;
+  }
+}
+
+/* MOBILE KECIL */
+@media (max-width: 576px) {
+  .detail-header h2 {
+    font-size: 16px;
+  }
+
+  .detail-card {
+    padding: 18px;
+  }
+
+  .info-content strong {
+    font-size: 14px;
+  }
+
+  .meta-info {
+    font-size: 13px;
+  }
+}
+
+/* ===== HAMBURGER MOBILE ===== */
+.mobile-hamburger {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  .mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1300;
+    background: #1e5cc8;
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    font-size: 22px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  /* sembunyikan toggle desktop */
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
 }

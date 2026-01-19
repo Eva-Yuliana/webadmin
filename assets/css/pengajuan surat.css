@@ -609,3 +609,180 @@ body {
     flex-wrap: wrap;
   }
 }
+
+/* ====================
+   MOBILE RESPONSIVE 
+===================== */
+
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* ===== SIDEBAR MOBILE (SLIDE) ===== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1200;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* MAIN FULL WIDTH */
+  .main {
+    width: 100% !important;
+    padding: 18px;
+  }
+
+  .sidebar.collapsed ~ .main {
+    width: 100% !important;
+  }
+
+  /* HIDE DESKTOP TOGGLE */
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* ===== MOBILE TOGGLE BUTTON ===== */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1300;
+  background: #1e5cc8;
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  font-size: 22px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ===== REPORT CARD MOBILE ===== */
+@media (max-width: 768px) {
+  .report-card {
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .report-left h3 {
+    font-size: 18px;
+  }
+
+  .report-left p {
+    font-size: 13px;
+  }
+
+  .report-summary {
+    flex-wrap: wrap;
+  }
+
+  .report-box {
+    flex: 1 1 100%;
+  }
+}
+
+/* ===== TABLE MOBILE ===== */
+@media (max-width: 768px) {
+  .table-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .table-controls-right input {
+    width: 100%;
+  }
+
+  .table-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table-action {
+    flex-wrap: wrap;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+}

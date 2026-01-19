@@ -555,3 +555,159 @@ body {
   border-color: #1e5cc8;
   box-shadow: 0 0 0 3px rgba(30, 92, 200, 0.1);
 }
+
+/* ====================
+   MOBILE RESPONSIVE 
+===================== */
+
+/* TABLET & MOBILE */
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* SIDEBAR MOBILE */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* MAIN FULL WIDTH */
+  .main {
+    width: 100% !important;
+    padding: 20px;
+  }
+
+  .sidebar.collapsed ~ .main {
+    width: 100% !important;
+  }
+
+  /* TOGGLE BUTTON FIX */
+  .sidebar-toggle {
+    display: none;
+  }
+
+  /* HEADER BANNER */
+  .banner-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* MOBILE SMALL */
+@media (max-width: 576px) {
+  /* PROFILE GRID STACK */
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* HEADER */
+  .header-banner {
+    padding: 18px;
+  }
+
+  .banner-text h1 {
+    font-size: 20px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+  }
+
+  /* PHOTO UPLOAD STACK */
+  .photo-upload-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* BUTTON FULL WIDTH */
+  .btn-save-profile {
+    width: 100%;
+  }
+
+  /* CARD HEADER TEXT */
+  .card-header {
+    font-size: 13px;
+  }
+
+  /* INPUT */
+  .input-clean input {
+    font-size: 13px;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+}

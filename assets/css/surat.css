@@ -454,26 +454,24 @@ body {
 ============================== */
 .form-group select {
   width: 100%;
-  padding: 10px 36px 10px 12px; /* kanan ditambah untuk icon */
+  padding: 10px 36px 10px 12px;
   border-radius: 8px;
   border: 1px solid var(--border);
   font-size: 13px;
   background-color: #fff;
   color: var(--text-dark);
-  appearance: none; /* hilangkan default arrow */
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
 }
 
-/* FORM GROUP KHUSUS YANG ADA SELECT */
 .form-group:has(select) {
   position: relative;
 }
 
-/* ICON ARROW CUSTOM → HANYA UNTUK SELECT */
 .form-group:has(select)::after {
-  content: "\F282"; /* Bootstrap Icons: chevron-down */
+  content: "\F282";
   font-family: "Bootstrap-icons";
   position: absolute;
   right: 14px;
@@ -506,5 +504,175 @@ body {
 @media (max-width: 768px) {
   .split-2 {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+============================== */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  /* SIDEBAR JADI DRAWER */
+  .sidebar {
+    position: fixed;
+    left: -240px;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  .sidebar.collapsed {
+    width: 240px;
+  }
+
+  /* MAIN FULL WIDTH */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .sidebar.collapsed ~ .main,
+  .sidebar ~ .main {
+    width: 100%;
+  }
+
+  /* TOGGLE PINDAH KE ATAS */
+  .sidebar-toggle {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1100;
+  }
+}
+
+@media (max-width: 768px) {
+  /* GRID 3 KOLOM → 1 */
+  .form-grid.three {
+    grid-template-columns: 1fr;
+  }
+
+  /* SPLIT KTP & KK → 1 KOLOM */
+  .form-section.split {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  /* SPLIT 2 */
+  .split-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .form-header h2 {
+    font-size: 16px;
+  }
+
+  .btn-back {
+    align-self: flex-start;
+  }
+
+  .btn-save {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .form-footer {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .form-footer .right {
+    flex-direction: column;
+  }
+
+  .btn-cancel,
+  .btn-preview,
+  .btn-print {
+    width: 100%;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
   }
 }

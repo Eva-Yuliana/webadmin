@@ -220,179 +220,6 @@ body {
   margin-bottom: 25px;
 }
 
-/* =========================
-   CARDS (COMPACT VERSION)
-========================= */
-.cards-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); /* diperkecil */
-  gap: 12px; /* jarak antar card lebih rapat */
-}
-
-.card {
-  background: #fff;
-  border-radius: 8px;
-  padding: 14px 16px; /* DIPERKECIL */
-  border-left: 4px solid;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 0.1rem 1.2rem rgba(58, 59, 69, 0.12); /* bayangan lebih halus */
-}
-
-/* Warna border */
-.summary-card.primary {
-  border-left-color: #4e73df;
-}
-.summary-card.success {
-  border-left-color: #1cc88a;
-}
-.summary-card.warning {
-  border-left-color: #f6c23e;
-}
-.summary-card.danger {
-  border-left-color: #e74a3b;
-}
-
-/* =========================
-   TEXT
-========================= */
-.card .title {
-  font-size: 13px; /* lebih kecil */
-  color: #4c4f52;
-  margin-bottom: 2px;
-}
-
-.card h2 {
-  font-size: 22px; /* dari 26 → 22 */
-  font-weight: 700;
-  line-height: 1.2;
-}
-
-.card-info .subtitle {
-  font-size: 12px; /* diperkecil */
-  color: #64748b;
-  margin-top: 2px;
-  display: block;
-}
-
-/* =========================
-   ICON
-========================= */
-.card .icon {
-  font-size: 32px; /* dari 40 → 32 */
-  opacity: 0.3;
-}
-
-/* =========================
-   CHART CARD
-========================= */
-.chart-card {
-  background: #fff;
-  padding: 16px; /* ikut diperkecil */
-  margin-top: 24px;
-  border-radius: 8px;
-  box-shadow: 0 0.1rem 1.2rem rgba(58, 59, 69, 0.12);
-}
-
-/* =========================================
-   CHART + CALENDAR (SAME HEIGHT)
-========================================= */
-
-.chart-row {
-  display: flex;
-  gap: 20px;
-  align-items: stretch; /* KUNCI agar tinggi sama */
-}
-
-/* ================= CARD BASE ================= */
-.chart-card,
-.calendar-card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  height: 100%; /* PENTING */
-}
-
-/* ================= PIE CHART ================= */
-.pie-area {
-  flex: 1;
-  max-width: 55%;
-}
-
-.chart-container {
-  flex: 1; /* isi sisa tinggi */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#pieChart {
-  max-width: 100%;
-  max-height: 280px;
-}
-
-/* ================= CALENDAR ================= */
-.calendar-card {
-  flex: 1;
-  max-width: 45%;
-  margin-top: 30px;
-}
-
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.calendar-header h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0;
-}
-
-.calendar-header button {
-  background: #4e73df;
-  color: #fff;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.calendar-weekdays {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  margin-bottom: 6px;
-  text-align: center;
-  font-weight: 600;
-  color: #4e73df;
-}
-
-.calendar-days {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 6px;
-  flex: 1; /* isi tinggi card */
-}
-
-.calendar-days div {
-  padding: 8px;
-  text-align: center;
-  border-radius: 8px;
-  background: #f8f9fc;
-  cursor: pointer;
-}
-
-.calendar-days .today {
-  background: #4e73df;
-  color: #fff;
-}
-
 /* ==============================
    TOP CONTENT (WELCOME AREA)
 ============================== */
@@ -439,171 +266,179 @@ body {
   object-fit: cover;
 }
 
-/* HERO CARD */
+/* ==========================================
+   HERO CARD CONTAINER
+   ========================================== */
 .hero-card {
   position: relative;
-  display: flex;
-  flex-wrap: wrap; /* responsive */
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(135deg, #2e4fbe, #3b82f6); /* formal biru */
-  padding: 36px 40px;
-  border-radius: 16px;
-  color: #ffffff;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #294dc5 0%, #3b82f6 100%);
+  border-radius: 24px; /* Sudut lebih melengkung agar modern */
+  padding: 30px;
   margin-bottom: 32px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  overflow: hidden; /* Memotong elemen dekorasi yang keluar */
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .hero-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(59, 130, 246, 0.25);
 }
 
-/* HERO TEXT */
+/* Elemen Dekorasi Latar Belakang */
+.circle-decor {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.decor-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  right: -50px;
+}
+.decor-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -50px;
+  left: 10%;
+}
+
+/* Layout Content */
+.hero-content {
+  position: relative;
+  z-index: 2; /* Di atas dekorasi */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* ==========================================
+   TEXT SECTION
+   ========================================== */
 .hero-text {
-  max-width: 520px;
+  max-width: 580px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
 }
 
 .hero-text h2 {
   font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  line-height: 1.3;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
 }
 
 .hero-text p {
-  font-size: 16px;
-  opacity: 0.9;
-  margin-bottom: 24px;
-  line-height: 1.6;
-  color: #f1f5f9; /* lebih lembut */
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(241, 245, 249, 0.9);
+  margin-bottom: 32px;
 }
 
-/* HERO BUTTON */
-.btn-primary {
-  padding: 12px 28px;
+/* ==========================================
+   BUTTONS
+   ========================================== */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
   background: #ffffff;
   color: #1e40af;
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 700;
   font-size: 15px;
-  font-weight: 600;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background: #f1f5ff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+.btn-hero-primary:hover {
+  background: #f8fafc;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* HERO IMAGE */
-.hero-image img {
-  width: 220px;
-  max-width: 100%;
-  animation: float 4s ease-in-out infinite;
-  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2));
-}
-
-/* FLOAT ANIMATION */
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .hero-card {
-    flex-direction: column;
-    text-align: center;
-    padding: 28px;
-  }
-
-  .hero-image img {
-    margin-top: 20px;
-    width: 180px;
-  }
-}
-
-/* ==============================
-   BUTTON
-============================== */
-.btn-primary {
-  background: #ffffff;
-  color: #3f63d8;
-  border: none;
-  padding: 12px 26px;
-  border-radius: 12px;
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 32px;
+  background: transparent;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   font-weight: 600;
   font-size: 15px;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.btn-primary:hover {
-  background: #f1f4ff;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+.btn-hero-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
 }
 
-/* ==============================
-   HERO IMAGE
-============================== */
+/* ==========================================
+   IMAGE & ANIMATION
+   ========================================== */
 .hero-image img {
-  width: 230px;
-  animation: float 4s ease-in-out infinite;
-  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.25));
+  width: 260px;
+  height: auto;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.25));
+  animation: floatIllustration 5s ease-in-out infinite;
 }
 
-/* ==============================
-   ANIMATIONS
-============================== */
-@keyframes fadeSlide {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
+@keyframes floatIllustration {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
   }
   50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
+    transform: translateY(-15px) rotate(2deg);
   }
 }
 
-/* ==============================
-   RESPONSIVE
-============================== */
-@media (max-width: 900px) {
-  .hero-card {
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 992px) {
+  .hero-content {
     flex-direction: column;
     text-align: center;
-    padding: 28px;
+  }
+
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-actions {
+    justify-content: center;
   }
 
   .hero-image img {
-    width: 180px;
-    margin-top: 24px;
+    width: 200px;
   }
 }
 
@@ -621,8 +456,7 @@ body {
 /* ==============================
    CARD BASE
 ============================== */
-.info-card,
-.activity-wrapper {
+.info-card {
   background: #ffffff;
   border-radius: 16px;
   padding: 22px;
@@ -632,28 +466,332 @@ body {
 }
 
 /* ==============================
-   HEADER
+   INFO CARD BASE
 ============================== */
-.info-header,
-.activity-title {
+.info-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 12px 28px rgba(30, 41, 59, 0.08);
   display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 18px;
-}
-
-.info-header h3,
-.activity-title h3 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #334155;
+  flex-direction: column;
 }
 
 /* ==============================
-   KABAR DESA
+   HEADER
+============================== */
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.info-icon-box {
+  width: 38px;
+  height: 38px;
+  background: #eff6ff;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.info-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.cards-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  padding: 5px;
+  font-family: "Inter", sans-serif;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+}
+
+.card-content {
+  padding: 12px 16px; /* Lebih tipis */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.card-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  color: #36373a;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+  display: block;
+}
+
+/* Icon Styling: Diberi background bulat transparan agar JELAS */
+.card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 2rem;
+  opacity: 1; /* Full opacity agar jelas */
+}
+
+.summary-card.primary::before {
+  background-color: #4e73df;
+}
+.summary-card.primary .card-title {
+  color: #4e73df;
+}
+.summary-card.primary .card-icon {
+  background: rgba(78, 115, 223, 0.1);
+  color: #4e73df;
+}
+
+/* Warning - Orange */
+.summary-card.warning::before {
+  background-color: #f6c23e;
+}
+.summary-card.warning .card-title {
+  color: #d39e00;
+}
+.summary-card.warning .card-icon {
+  background: rgba(246, 194, 62, 0.1);
+  color: #f6c23e;
+}
+
+/* Info - Sky Blue */
+.summary-card.info::before {
+  background-color: #36b9cc;
+}
+.summary-card.info .card-title {
+  color: #2c9faf;
+}
+.summary-card.info .card-icon {
+  background: rgba(54, 185, 204, 0.1);
+  color: #36b9cc;
+}
+
+/* Success - Green */
+.summary-card.success::before {
+  background-color: #1cc88a;
+}
+.summary-card.success .card-title {
+  color: #17a673;
+}
+.summary-card.success .card-icon {
+  background: rgba(28, 200, 138, 0.1);
+  color: #1cc88a;
+}
+
+/* =========================
+   CHART CARD
+========================= */
+.chart-card {
+  background: #fff;
+  padding: 16px; /* ikut diperkecil */
+  margin-top: 24px;
+  border-radius: 8px;
+  box-shadow: 0 0.1rem 1.2rem rgba(58, 59, 69, 0.12);
+}
+
+/* =========================================
+   CHART + CALENDAR (SAME HEIGHT)
+========================================= */
+
+.chart-row {
+  display: flex;
+  gap: 20px;
+  align-items: stretch; /* KUNCI agar tinggi sama */
+}
+
+/* ================= CARD BASE ================= */
+
+.calendar-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* PENTING */
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  border: 1px solid #f1f5f9;
+  flex: 1; /* Memberikan tinggi fleksibel yang sama */
+}
+
+/* Kiri: Pie Chart Area */
+.pie-area {
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.icon-title i {
+  color: #4e73df;
+  font-size: 1.2rem;
+}
+
+.icon-title h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.chart-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* Kanan: Calendar Area */
+.calendar-area {
+  max-width: 45%;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.calendar-header h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+}
+
+.calendar-nav button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.calendar-nav button:hover {
+  background: #4e73df;
+  color: white;
+}
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.calendar-weekdays span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+/* Styling Tanggal */
+.calendar-days div {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.calendar-days .inactive {
+  color: #cbd5e1;
+  font-weight: 400;
+}
+
+.calendar-days div:hover:not(.inactive):not(.today) {
+  background: #eff6ff;
+  color: #4e73df;
+}
+
+.calendar-days .today {
+  background: #4e73df;
+  color: #ffffff;
+  box-shadow: 0 8px 15px rgba(78, 115, 223, 0.3);
+}
+
+/* ==============================
+   IMAGE
 ============================== */
 .info-image {
-  height: 170px;
+  position: relative;
+  height: 180px;
   border-radius: 14px;
   overflow: hidden;
   margin-bottom: 18px;
@@ -665,84 +803,271 @@ body {
   object-fit: cover;
 }
 
+.image-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  padding: 6px 14px;
+  background: rgba(15, 23, 42, 0.65);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+
+/* ==============================
+   ITEM
+============================== */
 .info-item {
   display: flex;
-  gap: 14px;
+  gap: 16px;
+  margin-bottom: 26px;
 }
 
+.info-badge {
+  width: 36px;
+  height: 36px;
+  background: #f0fdf4;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* ==============================
+   CONTENT
+============================== */
 .info-content h4 {
-  font-size: 15px;
-  font-weight: 600;
-  color: #334155;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 4px;
 }
 
-.info-content span {
-  font-size: 13px;
+.info-date {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
   color: #64748b;
 }
 
 .info-content p {
   font-size: 14px;
-  margin-top: 6px;
   line-height: 1.6;
-  color: #64748b;
+  color: #475569;
+  margin-top: 8px;
 }
 
 /* ==============================
-   AKTIVITAS
+   FOOTER
 ============================== */
+.info-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-lihat-semua {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: #4e73df;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-lihat-semua:hover {
+  background: #3758c9;
+  transform: translateX(4px);
+}
+
+/* ==============================
+   AKTIVITAS TERBARU
+============================== */
+
+/* Container Utama */
+.activity-wrapper {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Agar sejajar dengan card di sebelahnya */
+}
+
+/* Header Section */
+.activity-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.icon-box {
+  width: 36px;
+  height: 36px;
+  background: #eff6ff;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.activity-title h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+/* List & Rows */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
 .activity-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 16px;
-  border-radius: 10px;
-  background: #e5eaf0;
-  margin-bottom: 12px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: #f8fafc; /* Warna background lebih soft dibanding sebelumnya */
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.activity-row:hover {
+  background: #ffffff;
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
 }
 
 .activity-info {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 15px;
+}
+
+/* Status Indicator (Dot) */
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.status-indicator::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.status-indicator.pending {
+  background: #f59e0b;
+}
+.status-indicator.pending::after {
+  background: #f59e0b;
+}
+
+.status-indicator.success {
+  background: #10b981;
+}
+.status-indicator.success::after {
+  background: #10b981;
+}
+
+.status-indicator.info {
+  background: #3b82f6;
+}
+.status-indicator.info::after {
+  background: #3b82f6;
+}
+
+/* Text Styling */
+.user-details {
+  display: flex;
+  flex-direction: column;
 }
 
 .name {
+  font-size: 14px;
   font-weight: 600;
   color: #334155;
 }
 
-/* DOT */
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
+.time {
+  font-size: 11px;
+  color: #94a3b8;
 }
 
-.dot.pending {
-  background: #fbbf24;
-}
-
-.dot.success {
-  background: #22c55e;
-}
-
-/* BADGE */
+/* Badges: Soft Background style */
 .badge {
-  padding: 6px 16px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
-.badge.pending {
-  background: #fbbf24;
-  color: #ffffff;
+.badge-pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+.badge-success {
+  background: #ecfdf5;
+  color: #047857;
+}
+.badge-info {
+  background: #eff6ff;
+  color: #1d4ed8;
 }
 
-.badge.success {
-  background: #22c55e;
+/* Footer Button */
+.activity-footer {
+  margin-top: 24px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 18px;
+}
+
+.btn-lihat-semua {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  background: #4e73df;
   color: #ffffff;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-lihat-semua:hover {
+  background: #3758c9;
+  box-shadow: 0 8px 20px rgba(78, 115, 223, 0.3);
 }
 
 /* ==============================
@@ -840,4 +1165,157 @@ body {
 
 .dropdown-item:hover {
   background: #f1f5f9;
+}
+
+/* =====================================================
+   MOBILE RESPONSIVE DASHBOARD
+===================================================== */
+
+/* MOBILE & TABLET */
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* ===== SIDEBAR SLIDE ===== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1200;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* ===== MAIN FULL WIDTH ===== */
+  .main {
+    width: 100% !important;
+    padding: 20px;
+  }
+
+  /* ===== HIDE DESKTOP TOGGLE ===== */
+  .sidebar-toggle {
+    display: none;
+  }
+
+  /* ===== HERO ===== */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image img {
+    width: 180px;
+  }
+
+  /* ===== GRID ===== */
+  .cards-row {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-row {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-row {
+    flex-direction: column;
+  }
+
+  .pie-area,
+  .calendar-area {
+    max-width: 100%;
+  }
+
+  /* ===== PROFILE ===== */
+  .profile-name {
+    display: none;
+  }
+}
+
+/* MOBILE SMALL */
+@media (max-width: 576px) {
+  .hero-text h2 {
+    font-size: 22px;
+  }
+
+  .card-value {
+    font-size: 1.2rem;
+  }
+
+  .btn-hero-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
 }

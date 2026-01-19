@@ -512,3 +512,190 @@ body {
   opacity: 0.85;
   transform: translateY(-2px);
 }
+
+/* ====================
+   MOBILE RESPONSIVE 
+===================== */
+
+/* ===== GLOBAL MOBILE ===== */
+@media (max-width: 992px) {
+  body {
+    display: block;
+  }
+
+  /* SIDEBAR SLIDE */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    z-index: 1200;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  /* MAIN FULL WIDTH */
+  .main {
+    width: 100% !important;
+    padding: 18px;
+  }
+
+  .sidebar.collapsed ~ .main {
+    width: 100% !important;
+  }
+
+  /* HIDE DESKTOP TOGGLE */
+  .sidebar-toggle {
+    display: none;
+  }
+}
+
+/* ===== MOBILE TOGGLE BUTTON ===== */
+.mobile-toggle {
+  display: none;
+  background: #1e5cc8;
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ===== HEADER MOBILE ===== */
+@media (max-width: 576px) {
+  .banner-content {
+    gap: 14px;
+  }
+
+  .banner-text h1 {
+    font-size: 20px;
+  }
+
+  .banner-text p {
+    font-size: 13px;
+  }
+}
+
+/* ===== NEWS GRID MOBILE ===== */
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
+/* ===== NEWS CARD MOBILE ===== */
+@media (max-width: 576px) {
+  .news-thumbnail img {
+    height: 160px;
+  }
+
+  .news-content {
+    padding: 18px;
+  }
+
+  .news-title {
+    font-size: 15px;
+  }
+
+  .news-desc {
+    font-size: 13px;
+  }
+}
+
+/* ===== ACTION BUTTONS MOBILE ===== */
+@media (max-width: 576px) {
+  .primary-actions {
+    flex-direction: column;
+  }
+
+  .btn-detail,
+  .btn-add-card {
+    width: 100%;
+  }
+
+  .action-buttons.center {
+    gap: 12px;
+  }
+}
+
+/* ==============================
+   HAMBURGER MOBILE
+============================== */
+.mobile-hamburger {
+  display: none;
+}
+
+/* MOBILE MODE */
+@media (max-width: 768px) {
+  .mobile-hamburger {
+    display: flex;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1200;
+    width: 44px;
+    height: 44px;
+    background: #1e5cc8;
+    color: #fff;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Sidebar jadi drawer */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+
+  .sidebar.show {
+    left: 0;
+  }
+
+  /* PAKSA TEKS MUNCUL */
+  .sidebar.show .menu-item span,
+  .sidebar.show .menu-section,
+  .sidebar.show .header-text,
+  .sidebar.show .logout-btn span {
+    display: block !important;
+  }
+
+  .sidebar.show .menu-item {
+    justify-content: flex-start;
+  }
+
+  /* Main full */
+  .main {
+    width: 100%;
+    padding: 16px;
+  }
+}
+
+/* ==============================
+   HIDE DESKTOP TOGGLE ON MOBILE
+============================== */
+@media (max-width: 768px) {
+  .sidebar-toggle {
+    display: none !important;
+  }
+}
