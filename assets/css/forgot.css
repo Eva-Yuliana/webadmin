@@ -49,7 +49,7 @@ body::before {
 
 /* Logo di login card */
 .login-logo {
-  width: 120px; /* lebih proporsional */
+  width: 180px; /* lebih proporsional */
   height: auto;
   margin-bottom: 20px;
 }
@@ -134,3 +134,4 @@ body::before {
 .login-card a {
   font-size: 13px;
 }
+
